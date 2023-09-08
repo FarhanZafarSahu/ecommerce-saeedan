@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', function () {
-    return view('admin.welcome');
-})->name('admin');
+
+
+Route::get('/login', [AdminController::class, 'index'])->name('login');
+Route::post('/login', [AdminController::class, 'login'])->name('admin.login');
+
+Route::group(['middleware' => 'auth','is_admin'], function () {
+
+    Route::get('/index', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+
+    /*category routes*/
+    Route::resource('category', CategoryController::class);
+    
+});
