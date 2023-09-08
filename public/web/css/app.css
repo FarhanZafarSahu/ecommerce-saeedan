@@ -1,0 +1,19 @@
+
+/* home page*/
+
+.beforeheader .langselect .dropdown ul li a:hover {
+    color: #fff !important;
+    background-color: var(--primary);
+}
+
+.main-header .search-box .search-form .input-group  .search-field {
+    height: 50px;
+}
+.main-header .search-box .search-form .input-group  .search-submit {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+    height: 50px;
+    width: 55px;
+    border-radius: 0px 5px 5px 0px;
+}

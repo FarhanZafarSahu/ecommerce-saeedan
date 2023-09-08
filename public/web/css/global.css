@@ -1,0 +1,17 @@
+
+:root {
+    --primary: #e94e1a;
+    --white: #fff;
+
+}
+
+.border-right {
+    border-right: 1px solid #dee2e6!important;
+}
+.cart-count {
+    padding-right: 0.6em;
+    margin: 0px 5px;
+    padding-left: 0.6em;
+    border-radius: 10rem;
+    background-color: var(--primary);
+}
